@@ -27,6 +27,16 @@ app.get("/contact", (req, res)=>{
   res.render('contact', {contactPage: contactContent});
 });
 
+app.get("/compose", (req, res)=>{
+  res.render('compose');
+});
+
+app.post("/compose", (req, res)=>{
+  const search = req.body.search;
+  console.log(search);
+  res.redirect('/compose');
+})
+
 
 
 app.listen(3000, function() {
