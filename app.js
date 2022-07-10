@@ -42,9 +42,18 @@ app.post("/compose", (req, res)=>{
   posts.push(post);
 
   res.redirect('/');
+});
+
+// **** to know the dynamic route ******
+app.get("/posts/:postName", (req, res)=>{
+
+  const requestedTitle = req.params.postName;
+  posts.forEach((post)=>{
+    if(requestedTitle === post.title){
+      console.log("Match found");
+    }
+  })
 })
-
-
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
