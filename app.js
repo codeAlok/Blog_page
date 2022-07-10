@@ -32,8 +32,8 @@ app.get("/compose", (req, res)=>{
 });
 
 app.post("/compose", (req, res)=>{
-  const search = req.body.search;
-  console.log(search);
+  const contentTitle = req.body.contentTitle;
+  console.log(contentTitle);
   res.redirect('/compose');
 })
 
